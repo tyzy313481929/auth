@@ -4,6 +4,7 @@ use Think\Controller;
 
 class LoginController extends Controller{
 	public function index(){
+		layout(false);
 		$this->display();
 	}
 
@@ -24,5 +25,14 @@ class LoginController extends Controller{
 		session('uid',$rs['id']);
 		session('username',$rs['username']);
 		redirect(U('Index/index'),1,'login successful');
+	}
+
+
+	public function logout(){
+		if(isset($_SESSION['uid'])){
+			 session_unset();
+			 session_destroy();
+			 redirect(U('Login/index'),1,'logout successful');
+		}
 	}
 }

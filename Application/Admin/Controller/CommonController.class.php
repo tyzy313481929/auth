@@ -24,8 +24,6 @@ class CommonController extends Controller{
           foreach ($menus as $key => $item) {
            	# code...
            	    $where['pid']  = $item['id'];
-           	    $menus['child']
-
            } 
 	}
 }

@@ -10,14 +10,14 @@
     <title>Gentellela Alela! | </title>
 
     <!-- Bootstrap -->
-    <link href="/test/auth/auth2/Public/Admin/css/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/test/auth/example/Public/Admin/css/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="/test/auth/auth2/Public/Admin/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/test/auth/example/Public/Admin/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="/test/auth/auth2/Public/Admin/css/nprogress/nprogress.css" rel="stylesheet">
+    <link href="/test/auth/example/Public/Admin/css/nprogress/nprogress.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="/test/auth/auth2/Public/Admin/css/build/css/custom.min.css" rel="stylesheet">
+    <link href="/test/auth/example/Public/Admin/css/build/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -34,7 +34,7 @@
             <!-- menu profile quick info -->
             <div class="profile">
               <div class="profile_pic">
-                <img src="/test/auth/auth2/Public/Admin/images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="/test/auth/example/Public/Admin/images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -178,7 +178,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="/test/auth/auth2/Public/Admin/images/img.jpg" alt=""><?php echo (session('username')); ?>
+                    <img src="/test/auth/example/Public/Admin/images/img.jpg" alt=""><?php echo (session('username')); ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -190,7 +190,7 @@
                       </a>
                     </li>
                     <li><a href="javascript:;">Help</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="<?php echo U('Login/logout');?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li><li>
                   </ul>
                 </li>
 
@@ -202,7 +202,7 @@
                   <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                     <li>
                       <a>
-                        <span class="image"><img src="/test/auth/auth2/Public/Admin/images/img.jpg" alt="Profile Image" /></span>
+                        <span class="image"><img src="/test/auth/example/Public/Admin/images/img.jpg" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -214,7 +214,7 @@
                     </li>
                     <li>
                       <a>
-                        <span class="image"><img src="/test/auth/auth2/Public/Admin/images/img.jpg" alt="Profile Image" /></span>
+                        <span class="image"><img src="/test/auth/example/Public/Admin/images/img.jpg" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -226,7 +226,7 @@
                     </li>
                     <li>
                       <a>
-                        <span class="image"><img src="/test/auth/auth2/Public/Admin/images/img.jpg" alt="Profile Image" /></span>
+                        <span class="image"><img src="/test/auth/example/Public/Admin/images/img.jpg" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -238,7 +238,7 @@
                     </li>
                     <li>
                       <a>
-                        <span class="image"><img src="/test/auth/auth2/Public/Admin/images/img.jpg" alt="Profile Image" /></span>
+                        <span class="image"><img src="/test/auth/example/Public/Admin/images/img.jpg" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -331,15 +331,15 @@
     </div>
 
     <!-- jQuery -->
-    <script src="/test/auth/auth2/Public/Admin/css/jquery/dist/jquery.min.js"></script>
+    <script src="/test/auth/example/Public/Admin/css/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="/test/auth/auth2/Public/Admin/css/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/test/auth/example/Public/Admin/css/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
-    <script src="/test/auth/auth2/Public/Admin/css/fastclick/lib/fastclick.js"></script>
+    <script src="/test/auth/example/Public/Admin/css/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
-    <script src="/test/auth/auth2/Public/Admin/css/nprogress/nprogress.js"></script>
+    <script src="/test/auth/example/Public/Admin/css/nprogress/nprogress.js"></script>
     
     <!-- Custom Theme Scripts -->
-    <script src="/test/auth/auth2/Public/Admin/css/build/js/custom.min.js"></script>
+    <script src="/test/auth/example/Public/Admin/css/build/js/custom.min.js"></script>
   </body>
 </html>

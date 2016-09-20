@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>login </title>
-    <link rel="stylesheet" type="text/css" href='/test/auth/auth2/Public/Admin/css/bootstrap/dist/css/bootstrap.min.css'>
-    <link rel="stylesheet" type="text/css" href="/test/auth/auth2/Public/Admin/css/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/test/auth/auth2/Public/Admin/css/nprogress/nprogress.css">
-    <link rel="stylesheet" type="text/css" href="/test/auth/auth2/Public/Admin/css/animate.css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/test/auth/auth2/Public/Admin/css/build/css/custom.min.css">
+    <link rel="stylesheet" type="text/css" href='/test/auth/example/Public/Admin/css/bootstrap/dist/css/bootstrap.min.css'>
+    <link rel="stylesheet" type="text/css" href="/test/auth/example/Public/Admin/css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/test/auth/example/Public/Admin/css/nprogress/nprogress.css">
+    <link rel="stylesheet" type="text/css" href="/test/auth/example/Public/Admin/css/animate.css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/test/auth/example/Public/Admin/css/build/css/custom.min.css">
     <script type="text/javascript">
     	$(function({
     		
