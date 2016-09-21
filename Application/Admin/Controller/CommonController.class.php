@@ -13,18 +13,23 @@ class CommonController extends Controller{
 	}
 
 	final public function getMenus(){
-		  $menus = [];
+		  $menulist = [];
           $where = [
           		'pid'  => 0,
           		'hide' => 0
           ];
-          $menus['main']  = M('Menu')->where($where)->order('sort asc')->select();
-          $menus['child'] = [];
-
-          foreach ($menus as $key => $item) {
-           	# code...
-           	    $where['pid']  = $item['id'];
+          $father = M('Menu')->where($where)->order('sort asc')->select();
+          $where['pid'] = array('gt',0);
+          $child  = M('Menu')->where($where)->order('sort asc')->select();
+          foreach ($father as $key => $item) {
+           	    $menulist[$item['id']]['father'] = $item; 
+           	    foreach ($child as $cey => $citem) {
+           	    	if($item['id']  == $citem ['pid']){
+           	    		$menulist[$item['id']]['child'][] = $citem;
+           	    	}
+           	    }
            } 
+           return $menulist;
 	}
 }
 
