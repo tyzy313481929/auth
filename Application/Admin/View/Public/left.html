@@ -7,7 +7,7 @@
                       <li><a><i class="{$m.father.css}"></i>{$m.father.title}<span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
                       <foreach name="m.child" item="child">
-                          <li><a href="{$child.url}">{$child.title}</a></li>
+                          <li><a href="{$child.url|U}">{$child.title}</a></li>
                       </foreach>
                       </ul>
                     </foreach>
