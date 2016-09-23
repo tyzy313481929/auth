@@ -1,0 +1,123 @@
+ <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>添加用户组</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                    <a href="{:U('AuthGroup/index')}" class="btn btn-success btn-lg">返回用户组列表</a>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_content">
+
+                    <form class="form-horizontal form-label-left" novalidate action="{:U('AuthGroup/add')}" method="POST">
+
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">用户组名称 <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="title" class="form-control col-md-7 col-xs-12" name="title" placeholder="" required="required" type="text">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">用户组成员</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <select class="select2_multiple form-control" name='rules[]' multiple="multiple">
+                            <volist name='userlist' id='vo'>
+                                 <option value="{$vo.id}">{$vo.username}</option>
+                            </volist>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">用户组权限</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <volist name="node_list" id="node" >
+                                <input  type="checkbox" name="rules[]">{$node.title}管理
+                                 <br />
+                                <present name="node['child']">
+                                <volist name="node['child']" id="child" >
+
+                                     <input class="auth_rules rules_row" type="checkbox" name="rules[]" value="<?php echo $auth_rules[$child['url']] ?>"/>{$child.title}<br />
+                                         <notempty name="child['operator']">
+                                                 <volist name="child['operator']" id="op">
+                                                         <input class="auth_rules" type="checkbox" name="rules[]"
+                                                         value="<?php echo $auth_rules[$op['url']] ?>"/>{$op.title}
+                                                 </volist>
+                                         </notempty>
+                                </volist>
+                                </present>
+                              </dd>
+                            </dl>
+                          </volist>
+
+                        </div>
+                      </div>
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                          <button type="submit" class="btn btn-primary">Cancel</button>
+                          <button id="send" type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+
+ <!-- validator -->
+    <script>
+      // initialize the validator function
+      validator.message.date = 'not a real date';
+
+      // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
+      $('form')
+        .on('blur', 'input[required], input.optional, select.required', validator.checkField)
+        .on('change', 'select.required', validator.checkField)
+        .on('keypress', 'input[required][pattern]', validator.keypress);
+
+      $('.multi.required').on('keyup blur', 'input', function() {
+        validator.checkField.apply($(this).siblings().last()[0]);
+      });
+
+      $('form').submit(function(e) {
+        e.preventDefault();
+        var submit = true;
+
+        // evaluate the form using generic validaing
+        if (!validator.checkAll($(this))) {
+          submit = false;
+        }
+
+        if (submit)
+          this.submit();
+
+        return false;
+      });
+
+
+      $(function(){
+          $(".select2_multiple").select2({
+            //maximumSelectionLength: 4,
+            placeholder: "点击即可选择",
+            allowClear: true
+          });
+      })
+    </script>
+    <!-- /validator -->
